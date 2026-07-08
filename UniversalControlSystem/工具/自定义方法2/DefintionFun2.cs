@@ -40,7 +40,7 @@ namespace UniversalControlSystem
                     sendQRCode._通讯名字 = "CCD右"; //用到
                                                //拍照校正，修改XY坐标后保存
                     sendQRCode.发送命令 = $"&SN:{qrCode}";
-                    FormStart.LOG_ShowFrom["系统LOG"].Enqueue("发送码给相机");
+                    FormStart.LOG_ShowFrom["系统LOG"].Enqueue("发送码给相机");//
                     //触发拍照
                     data = sendQRCode.GetR_C(sendQRCode);
                     if (data == "")
