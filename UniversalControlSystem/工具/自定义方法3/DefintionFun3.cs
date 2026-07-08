@@ -11,7 +11,7 @@ namespace UniversalControlSystem
     public class DefintionFun3 : ImageTool, AixsCtronInterface
     {
         string AxisXName = "左清洗X轴", AxisYName = "左清洗Y轴", AxisZName = "左清洗Z轴";
-        string AxisXName1 = "右清洗X轴", AxisYName1 = "右清洗Y轴", AxisZName1 = "右清洗Z轴";
+        string AxisXName1 = "右清洗X轴", AxisYName1 = "右清洗Y轴", AxisZName1 = "右清洗Z轴";//11111111111111111
         public string FunName { get; set; }
 
         /// <summary>

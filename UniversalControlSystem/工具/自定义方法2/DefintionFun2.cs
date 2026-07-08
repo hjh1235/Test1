@@ -37,7 +37,7 @@ namespace UniversalControlSystem
             {
                 case "左发送码":
                     string qrCode = DataManage.StrValue("扫码","模组码"); ;//1231231231213
-                    sendQRCode._通讯名字 = "CCD右"; //用到
+                    sendQRCode._通讯名字 = "CCD右"; //用到111111111111111
                                                //拍照校正，修改XY坐标后保存
                     sendQRCode.发送命令 = $"&SN:{qrCode}";
                     FormStart.LOG_ShowFrom["系统LOG"].Enqueue("发送码给相机");
