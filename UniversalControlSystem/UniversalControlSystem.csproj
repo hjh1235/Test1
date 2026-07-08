@@ -1,0 +1,2151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31546B13-10B6-4EAB-A6C7-A7F7229B0693}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UniversalControlSystem</RootNamespace>
+    <AssemblyName>UniversalControlSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>simplicity Icon 05.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basler.Pylon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e389355f398382ab, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Basler\pylon 5\Development\Assemblies\Basler.Pylon\x64\Basler.Pylon.dll</HintPath>
+    </Reference>
+    <Reference Include="CameraOperation">
+      <HintPath>bin\Debug\Hcon\CameraOperation.dll</HintPath>
+    </Reference>
+    <Reference Include="CommunicationOperation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Hcon\CommunicationOperation.dll</HintPath>
+    </Reference>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="DrawShapeControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Hcon\DrawShapeControl.dll</HintPath>
+    </Reference>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>bin\Debug\runDLL\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet, Version=12.0.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Hcon\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="hdevenginedotnet, Version=12.0.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\hdevenginedotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="HOperatorSet_EX">
+      <HintPath>..\..\..\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\DLL\HOperatorSet_EX.dll</HintPath>
+    </Reference>
+    <Reference Include="HslCommunication, Version=7.0.1.0, Culture=neutral, PublicKeyToken=cdb2261fa039ed67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython">
+      <HintPath>bin\Debug\PYDLL\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules">
+      <HintPath>bin\Debug\PYDLL\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.SQLite">
+      <HintPath>bin\Debug\PYDLL\IronPython.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Wpf">
+      <HintPath>bin\Debug\PYDLL\IronPython.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="LocationCircle, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Hcon\LocationCircle.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>bin\Debug\PYDLL\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>bin\Debug\PYDLL\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="netDxf, Version=0.1.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\netDxf.dll</HintPath>
+    </Reference>
+    <Reference Include="NetWorkHelper">
+      <HintPath>bin\Debug\CadDLL\NetWorkHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PublicOperation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Hcon\PublicOperation.dll</HintPath>
+    </Reference>
+    <Reference Include="PylonC.NET, Version=4.1.0.0, Culture=neutral, PublicKeyToken=a77e8471c5919d5a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PylonC.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpEdit">
+      <HintPath>bin\Debug\runDLL\SharpEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="SpinnakerNET_v120">
+      <HintPath>bin\Debug\Hcon\SpinnakerNET_v120.dll</HintPath>
+    </Reference>
+    <Reference Include="SpinnakerNET_v140">
+      <HintPath>bin\Debug\Hcon\SpinnakerNET_v140.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.2.52.56040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\控制平台开发\UniversalControlSystem\bin\Debug\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VisionTool">
+      <HintPath>bin\Debug\runDLL\VisionTool.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>bin\Debug\CadDLL\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorityManagement\FormAuthorityUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorityManagement\FormAuthorityUpdate.Designer.cs">
+      <DependentUpon>FormAuthorityUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorityManagement\FormAutorityManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorityManagement\FormAutorityManage.Designer.cs">
+      <DependentUpon>FormAutorityManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorityManagement\FormInterfaceManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorityManagement\FormInterfaceManage.Designer.cs">
+      <DependentUpon>FormInterfaceManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorityManagement\FormUserLogoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorityManagement\FormUserLogoin.Designer.cs">
+      <DependentUpon>FormUserLogoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoSizeFormClass.cs" />
+    <Compile Include="Axis_setting\Aisx_FormHardSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Axis_setting\Aisx_FormHardSetting.designer.cs">
+      <DependentUpon>Aisx_FormHardSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis_setting\FormAxisSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Axis_setting\FormAxisSetting.Designer.cs">
+      <DependentUpon>FormAxisSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardSetting\CardDate.cs" />
+    <Compile Include="CardSetting\FormHardSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardSetting\FormHardSetting.designer.cs">
+      <DependentUpon>FormHardSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardSetting\GoogolTechExtCardInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardSetting\GoogolTechExtCardInfoForm.Designer.cs">
+      <DependentUpon>GoogolTechExtCardInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardSetting\GoolGaoHardSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardSetting\GoolGaoHardSettingForm.Designer.cs">
+      <DependentUpon>GoolGaoHardSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardSetting\Hard_Ward_Contral.cs" />
+    <Compile Include="Communication\CommunicationFun.cs" />
+    <Compile Include="Communication\Communication_Date.cs" />
+    <Compile Include="Communication\Commu_Interface.cs" />
+    <Compile Include="Communication\FormCommunicationSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Communication\FormCommunicationSetting.designer.cs">
+      <DependentUpon>FormCommunicationSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\networkSer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Communication\networkSer.Designer.cs">
+      <DependentUpon>networkSer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\network.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Communication\network.Designer.cs">
+      <DependentUpon>network.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\SerialPort.cs" />
+    <Compile Include="Communication\SerialPortFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Communication\SerialPortFrom.Designer.cs">
+      <DependentUpon>SerialPortFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\Socket_server_client.cs" />
+    <Compile Include="Component1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component1.Designer.cs">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManage\DataManage.cs" />
+    <Compile Include="DataManage\FormProjectData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManage\FormProjectData.Designer.cs">
+      <DependentUpon>FormProjectData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManage\FormProjectDataItemMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManage\FormProjectDataItemMonitor.Designer.cs">
+      <DependentUpon>FormProjectDataItemMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManage\FormProjectDataItemSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManage\FormProjectDataItemSetting.Designer.cs">
+      <DependentUpon>FormProjectDataItemSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManage\FormProjectDataMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManage\FormProjectDataMonitor.Designer.cs">
+      <DependentUpon>FormProjectDataMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManage\FormProjectDataSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManage\FormProjectDataSetting.Designer.cs">
+      <DependentUpon>FormProjectDataSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManage\ProjectDataBase.cs" />
+    <Compile Include="DataManage\ProjectDataDoc.cs" />
+    <Compile Include="DataManage\ProjectDataS.cs" />
+    <Compile Include="DateGroup\DateGroup_From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateGroup\DateGroup_From.designer.cs">
+      <DependentUpon>DateGroup_From.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateGroup\DateGroup_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateGroup\DateGroup_Setting.Designer.cs">
+      <DependentUpon>DateGroup_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateGroup\DateGroutCtron.cs" />
+    <Compile Include="DrawTool\DrawTool_From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\DrawTool_From.designer.cs">
+      <DependentUpon>DrawTool_From.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\DrawTool_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\DrawTool_Setting.Designer.cs">
+      <DependentUpon>DrawTool_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlowChar\EditBLL.cs" />
+    <Compile Include="FlowChar\FlowCharForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlowChar\FlowCharForm.Designer.cs">
+      <DependentUpon>FlowCharForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlowChar\FlowChar_From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlowChar\FlowChar_From.designer.cs">
+      <DependentUpon>FlowChar_From.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlowChar\ImageTool.cs" />
+    <Compile Include="FlowChar\LoadData.cs" />
+    <Compile Include="Googol\config.cs" />
+    <Compile Include="Googol\ContraInterface.cs" />
+    <Compile Include="Googol\Googol_gtn_Contral.cs" />
+    <Compile Include="Googol\Googol_gts_Contral.cs" />
+    <Compile Include="Googol\gtn.cs" />
+    <Compile Include="Googol\gts.cs" />
+    <Compile Include="Googol\HardWareBase.cs" />
+    <Compile Include="Googol\ManageContral.cs" />
+    <Compile Include="HiPerfTimer.cs" />
+    <Compile Include="IOSetting\FormIOSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOSetting\FormIOSetting.Designer.cs">
+      <DependentUpon>FormIOSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOSetting\IoChangeName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOSetting\IoChangeName.Designer.cs">
+      <DependentUpon>IoChangeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOSetting\IO_FormHardSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOSetting\IO_FormHardSetting.designer.cs">
+      <DependentUpon>IO_FormHardSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MES\ConfigINI.cs" />
+    <Compile Include="MES\MES\FtpUpd.cs" />
+    <Compile Include="MES\MES\HttpPost.cs" />
+    <Compile Include="MES\MES\ImgFtpUpd.cs" />
+    <Compile Include="MES\MES\mes.cs" />
+    <Compile Include="MES\分类\NCOneMes.cs" />
+    <Compile Include="MES\分类\NCTwoMes.cs" />
+    <Compile Include="MES\分类\NJOneMes.cs" />
+    <Compile Include="MES\分类\NJTwoMes.cs" />
+    <Compile Include="MillisecondTimer.cs" />
+    <Compile Include="OtherForm\AnalogQuantityFormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForm\AnalogQuantityFormSetting.designer.cs">
+      <DependentUpon>AnalogQuantityFormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\AnalogQuantityOutFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForm\AnalogQuantityOutFrom.Designer.cs">
+      <DependentUpon>AnalogQuantityOutFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\OtherFormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForm\OtherFormSetting.designer.cs">
+      <DependentUpon>OtherFormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\波形展示.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForm\波形展示.Designer.cs">
+      <DependentUpon>波形展示.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC\PLCCommunicationFun.cs" />
+    <Compile Include="PLC\PLCData.cs" />
+    <Compile Include="PLC\PLC_Class_Ctr\CommunicationMoudBus.cs" />
+    <Compile Include="PLC\PLC_Class_Ctr\interfaceCommunication.cs" />
+    <Compile Include="PLC\PLC_Class_Ctr\KEYENCE.cs" />
+    <Compile Include="PLC\PLC_Class_Ctr\MitsubishiFxModbus.cs" />
+    <Compile Include="PLC\PLC_Class_Ctr\OmronFinsTCP.cs" />
+    <Compile Include="PLC\PLC_Class_Ctr\panasonicPLC.cs" />
+    <Compile Include="PLC\PLC_Class_Ctr\Siemens.cs" />
+    <Compile Include="PLC\PLC_Class_Ctr\TAIDA.cs" />
+    <Compile Include="PLC\PLC_From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLC\PLC_From.designer.cs">
+      <DependentUpon>PLC_From.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC\PLC_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLC\PLC_Setting.Designer.cs">
+      <DependentUpon>PLC_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointSetting\PointSetting_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointSetting\PointSetting_Form.designer.cs">
+      <DependentUpon>PointSetting_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointSetting\Point_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointSetting\Point_Form.designer.cs">
+      <DependentUpon>Point_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointSet\PointSet_From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointSet\PointSet_From.designer.cs">
+      <DependentUpon>PointSet_From.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointSet\PointSet_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointSet\PointSet_Setting.Designer.cs">
+      <DependentUpon>PointSet_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Process.cs" />
+    <Compile Include="ProductionData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="shuakaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash\FrmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash\FrmSplashScreen.Designer.cs">
+      <DependentUpon>FrmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splash\ISplashForm.cs" />
+    <Compile Include="Splash\Splasher.cs" />
+    <Compile Include="SQLiteConnect.cs" />
+    <Compile Include="Task\CCDTaskRight.cs" />
+    <Compile Include="Task\Fascicule.cs" />
+    <Compile Include="Task\LayOffFascicule.cs" />
+    <Compile Include="Task\LoadMaterial.cs" />
+    <Compile Include="Task\TransitShipment.cs" />
+    <Compile Include="Task\CCDTask.cs" />
+    <Compile Include="TEST12.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TEST12.Designer.cs">
+      <DependentUpon>TEST12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Weld_Log.cs" />
+    <Compile Include="主要界面\AxisStateViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\AxisStateViewForm.Designer.cs">
+      <DependentUpon>AxisStateViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\CCDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\CCDForm.Designer.cs">
+      <DependentUpon>CCDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\CheckData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\CheckData.Designer.cs">
+      <DependentUpon>CheckData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\DemarcateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\DemarcateForm.Designer.cs">
+      <DependentUpon>DemarcateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\ExamineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\ExamineForm.Designer.cs">
+      <DependentUpon>ExamineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\FormAlarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\FormAlarm.Designer.cs">
+      <DependentUpon>FormAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\InFormationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\InFormationForm.Designer.cs">
+      <DependentUpon>InFormationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\IODebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\IODebugForm.Designer.cs">
+      <DependentUpon>IODebugForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\OtherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForm\OtherForm.Designer.cs">
+      <DependentUpon>OtherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\LaserContorlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\LaserContorlForm.Designer.cs">
+      <DependentUpon>LaserContorlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\MESSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\MESSettingForm.Designer.cs">
+      <DependentUpon>MESSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\OperateDirectionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\OperateDirectionsForm.Designer.cs">
+      <DependentUpon>OperateDirectionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\Parameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\Parameter.Designer.cs">
+      <DependentUpon>Parameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\ParamSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\ParamSettingForm.Designer.cs">
+      <DependentUpon>ParamSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主要界面\SystemSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主要界面\SystemSettings.Designer.cs">
+      <DependentUpon>SystemSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\FlowCharCtron.cs" />
+    <Compile Include="工具\Frm_Job.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\Frm_Job.Designer.cs">
+      <DependentUpon>Frm_Job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\HomeFlow.cs" />
+    <Compile Include="工具\IOTooL\输入分类\检测输入上升沿脉冲\Check_IN_Rising_edge.cs" />
+    <Compile Include="工具\IOTooL\输入分类\输入检测\Check_INPUT.cs" />
+    <Compile Include="工具\IOTooL\输入分类\输入检测\Check_INPUTFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\IOTooL\输入分类\输入检测\Check_INPUTFrom.Designer.cs">
+      <DependentUpon>Check_INPUTFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\IOTooL\输入分类\输入检测下降沿脉冲\Check_IN_Falling_edge.cs" />
+    <Compile Include="工具\IOTooL\输入分类\输入检测后延时\Check_INPUT_Delay.cs" />
+    <Compile Include="工具\IOTooL\输出分类\先延时后输出\F_Delay_DeeOutPut.cs" />
+    <Compile Include="工具\IOTooL\输出分类\先延时后输出\F_Delay_DeOutPutFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\IOTooL\输出分类\先延时后输出\F_Delay_DeOutPutFrom.Designer.cs">
+      <DependentUpon>F_Delay_DeOutPutFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\IOTooL\输出分类\先输出后延时\F_OutPut_DeeDelay.cs" />
+    <Compile Include="工具\IOTooL\输出分类\先输出后延时\F_OutPut_DDelayFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\IOTooL\输出分类\先输出后延时\F_OutPut_DDelayFrom.Designer.cs">
+      <DependentUpon>F_OutPut_DDelayFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\IOTooL\输出分类\脉冲输出\OutPut_PulseFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\IOTooL\输出分类\脉冲输出\OutPut_PulseFrom.Designer.cs">
+      <DependentUpon>OutPut_PulseFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\IOTooL\输出分类\脉冲输出\OutPut_Puse.cs" />
+    <Compile Include="工具\IOTooL\输出分类\输出\OutPut.cs" />
+    <Compile Include="工具\IOTooL\输出分类\输出\OutPutFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\IOTooL\输出分类\输出\OutPutFrom.Designer.cs">
+      <DependentUpon>OutPutFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\MES工具\过站校验\校验\Check_Product.cs" />
+    <Compile Include="工具\MES工具\过站校验\校验\Check_ProductFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\MES工具\过站校验\校验\Check_ProductFrom.Designer.cs">
+      <DependentUpon>Check_ProductFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\TaskRun.cs" />
+    <Compile Include="工具\ToolBase.cs" />
+    <Compile Include="工具\动作融合\交叉螺旋\Cross_Spiral.cs" />
+    <Compile Include="工具\动作融合\交叉螺旋\Cross_SpiralFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\动作融合\交叉螺旋\Cross_SpiralFrom.Designer.cs">
+      <DependentUpon>Cross_SpiralFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\动作融合\圆\Cir.cs" />
+    <Compile Include="工具\动作融合\圆\CirFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\动作融合\圆\CirFrom.Designer.cs">
+      <DependentUpon>CirFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\动作融合\正方形\Dimetric.cs" />
+    <Compile Include="工具\动作融合\正方形\DimetricFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\动作融合\正方形\DimetricFrom.Designer.cs">
+      <DependentUpon>DimetricFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\动作融合\螺旋\Spiral.cs" />
+    <Compile Include="工具\动作融合\螺旋\SpiralFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\动作融合\螺旋\SpiralFrom.Designer.cs">
+      <DependentUpon>SpiralFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\延时\DelayData.cs" />
+    <Compile Include="工具\延时\DelayFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\延时\DelayFrom.Designer.cs">
+      <DependentUpon>DelayFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\接口\InIO_Interface.cs" />
+    <Compile Include="工具\接口\AixsCtronInterface.cs" />
+    <Compile Include="工具\接口\OutIO_Interface.cs" />
+    <Compile Include="工具\插补\三轴直线插补\LnXYZ.cs" />
+    <Compile Include="工具\插补\三轴直线插补\LnXYZFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\插补\三轴直线插补\LnXYZFrom.Designer.cs">
+      <DependentUpon>LnXYZFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\插补\两轴圆弧插补\ArcXYC.cs" />
+    <Compile Include="工具\插补\两轴圆弧插补\ArcXYCFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\插补\两轴圆弧插补\ArcXYCFrom.Designer.cs">
+      <DependentUpon>ArcXYCFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\插补\两轴直线插补\LnXY.cs" />
+    <Compile Include="工具\插补\两轴直线插补\LnXYFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\插补\两轴直线插补\LnXYFrom.Designer.cs">
+      <DependentUpon>LnXYFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\插补\四轴直线插补\LnXYZA.cs" />
+    <Compile Include="工具\插补\四轴直线插补\LnXYZAFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\插补\四轴直线插补\LnXYZAFrom.Designer.cs">
+      <DependentUpon>LnXYZAFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\插补\缓存区插入其他\AddOtherBuff.cs" />
+    <Compile Include="工具\插补\缓存区插入其他\AddOtherBuffFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\插补\缓存区插入其他\AddOtherBuffFrom.Designer.cs">
+      <DependentUpon>AddOtherBuffFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\数据组\DataGroup.cs" />
+    <Compile Include="工具\数据组\DataGroupFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\数据组\DataGroupFrom.Designer.cs">
+      <DependentUpon>DataGroupFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\条件判断\条件判断步骤跳转\LogicalJump.cs" />
+    <Compile Include="工具\条件判断\条件判断步骤跳转\LogicalJumpFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\条件判断\条件判断步骤跳转\LogicalJumpFrom.Designer.cs">
+      <DependentUpon>LogicalJumpFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\条件判断\条件判断调子流程主\CallSubroutine.cs" />
+    <Compile Include="工具\条件判断\条件判断调子流程主\CallSubroutineFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\条件判断\条件判断调子流程主\CallSubroutineFrom.Designer.cs">
+      <DependentUpon>CallSubroutineFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\测距工具\数字量数据\DigitalMea_Height.cs" />
+    <Compile Include="工具\测距工具\数字量数据\DigitalMea_HeighFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\测距工具\数字量数据\DigitalMea_HeighFrom.Designer.cs">
+      <DependentUpon>DigitalMea_HeighFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\相机工具\定制功能\相机补偿\CamerCompensation_Center.cs" />
+    <Compile Include="工具\相机工具\定制功能\相机补偿\CamerCompensation_CenterFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\相机工具\定制功能\相机补偿\CamerCompensation_CenterFrom.Designer.cs">
+      <DependentUpon>CamerCompensation_CenterFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\相机工具\定制功能\焊后拍照检\WeldedCheck.cs" />
+    <Compile Include="工具\相机工具\定制功能\焊后拍照检\WeldedCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\相机工具\定制功能\焊后拍照检\WeldedCheckForm.Designer.cs">
+      <DependentUpon>WeldedCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\相机工具\定制功能\获取圆心坐标\CamerGetR_Center.cs" />
+    <Compile Include="工具\相机工具\定制功能\获取圆心坐标\CamerGetR_CenterFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\相机工具\定制功能\获取圆心坐标\CamerGetR_CenterFrom.Designer.cs">
+      <DependentUpon>CamerGetR_CenterFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\算术细分\与\And.cs" />
+    <Compile Include="工具\算术细分\与\AndFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\算术细分\与\AndFrom.Designer.cs">
+      <DependentUpon>AndFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\算术细分\异或\XOr.cs" />
+    <Compile Include="工具\算术细分\异或\XOrFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\算术细分\异或\XOrFrom.Designer.cs">
+      <DependentUpon>XOrFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\算术细分\或\Or.cs" />
+    <Compile Include="工具\算术细分\或\OrFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\算术细分\或\OrFrom.Designer.cs">
+      <DependentUpon>OrFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\算术细分\非\Neg.cs" />
+    <Compile Include="工具\算术细分\非\NegFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\算术细分\非\NegFrom.Designer.cs">
+      <DependentUpon>NegFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\缓存区控制列表\BufferArea.cs" />
+    <Compile Include="工具\缓存区控制列表\BufferAreaFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\缓存区控制列表\BufferAreaFrom.Designer.cs">
+      <DependentUpon>BufferAreaFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\脚本\CodeEditTool\CodeEditTool.cs" />
+    <Compile Include="工具\脚本\CodeEditTool\Frm_CodeEditTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\脚本\CodeEditTool\Frm_CodeEditTool.designer.cs">
+      <DependentUpon>Frm_CodeEditTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\脚本\PY脚本\PYTool.cs" />
+    <Compile Include="工具\脚本\PY脚本\PYToolFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\脚本\PY脚本\PYToolFrom.Designer.cs">
+      <DependentUpon>PYToolFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\自定义方法3\DefintionFun3.cs" />
+    <Compile Include="工具\自定义方法3\DefintionFunFrom3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\自定义方法3\DefintionFunFrom3.Designer.cs">
+      <DependentUpon>DefintionFunFrom3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\自定义方法2\DefintionFun2.cs" />
+    <Compile Include="工具\自定义方法2\DefintionFunFrom2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\自定义方法2\DefintionFunFrom2.Designer.cs">
+      <DependentUpon>DefintionFunFrom2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\自定义方法4\DefintionFun4.cs" />
+    <Compile Include="工具\自定义方法4\DefintionFunFrom4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\自定义方法4\DefintionFunFrom4.Designer.cs">
+      <DependentUpon>DefintionFunFrom4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\自定义方法\DefintionFun.cs" />
+    <Compile Include="工具\自定义方法\DefintionFunFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\自定义方法\DefintionFunFrom.Designer.cs">
+      <DependentUpon>DefintionFunFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\轴运动控制\单轴运动\单轴运动\Aixs_one_Ctron.cs" />
+    <Compile Include="工具\轴运动控制\单轴运动\单轴运动\Aixs_one_CtronFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\轴运动控制\单轴运动\单轴运动\Aixs_one_CtronFrom.Designer.cs">
+      <DependentUpon>Aixs_one_CtronFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\轴运动控制\单轴运动\检测轴运动完成\CheckAixsRunFinish.cs" />
+    <Compile Include="工具\轴运动控制\单轴运动\检测轴运动完成\CheckAixsRunFinishFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\轴运动控制\单轴运动\检测轴运动完成\CheckAixsRunFinishFrom.Designer.cs">
+      <DependentUpon>CheckAixsRunFinishFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\轴运动控制\多轴运动\多轴检测轴运动完成\Aixs_more_CtronRunFinish.cs" />
+    <Compile Include="工具\轴运动控制\多轴运动\多轴检测轴运动完成\Aixs_more_CtronRunFinishFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\轴运动控制\多轴运动\多轴检测轴运动完成\Aixs_more_CtronRunFinishFrom.Designer.cs">
+      <DependentUpon>Aixs_more_CtronRunFinishFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\轴运动控制\多轴运动\多轴运动\Aixs_more_Ctron.cs" />
+    <Compile Include="工具\轴运动控制\多轴运动\多轴运动\Aixs_more_CtronFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\轴运动控制\多轴运动\多轴运动\Aixs_more_CtronFrom.Designer.cs">
+      <DependentUpon>Aixs_more_CtronFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\通讯\串口通讯\串口通讯发送命令\SerialPortSendData.cs" />
+    <Compile Include="工具\通讯\串口通讯\串口通讯发送命令\SerialPortSendDataFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\通讯\串口通讯\串口通讯发送命令\SerialPortSendDataFrom.Designer.cs">
+      <DependentUpon>SerialPortSendDataFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\通讯\串口通讯\串口通讯接受指令\SerialPortResData.cs" />
+    <Compile Include="工具\通讯\串口通讯\串口通讯接受指令\SerialPortResDataFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\通讯\串口通讯\串口通讯接受指令\SerialPortResDataFrom.Designer.cs">
+      <DependentUpon>SerialPortResDataFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\通讯\网络通讯\网络通讯发送命令\_ser_clSendData.cs" />
+    <Compile Include="工具\通讯\网络通讯\网络通讯发送命令\_ser_clSendDataFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\通讯\网络通讯\网络通讯发送命令\_ser_clSendDataFrom.Designer.cs">
+      <DependentUpon>_ser_clSendDataFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\通讯\网络通讯\网络通讯接受指令\_ser_clResData.cs" />
+    <Compile Include="工具\通讯\网络通讯\网络通讯接受指令\_ser_clResDataFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\通讯\网络通讯\网络通讯接受指令\_ser_clResDataFrom.Designer.cs">
+      <DependentUpon>_ser_clResDataFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工具\金橙子\EzdKernel.cs" />
+    <Compile Include="工具\金橙子\EzdKernelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工具\金橙子\EzdKernelForm.Designer.cs">
+      <DependentUpon>EzdKernelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\CaliperTool.cs" />
+    <Compile Include="相机工具\CameraDAL.cs" />
+    <Compile Include="相机工具\ComboBox_Draw.cs" />
+    <Compile Include="相机工具\FixtureTool.cs" />
+    <Compile Include="相机工具\ImageShow\HW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\ImageShow\HW.designer.cs">
+      <DependentUpon>HW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_9PointCalib\9PointCalibTool.cs" />
+    <Compile Include="相机工具\_9PointCalib\frm_9PointCalib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_9PointCalib\frm_9PointCalib.designer.cs">
+      <DependentUpon>frm_9PointCalib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_AffineTransImage\AffineTransImageTool.cs" />
+    <Compile Include="相机工具\_AffineTransImage\frm_AffineTransImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_AffineTransImage\frm_AffineTransImage.Designer.cs">
+      <DependentUpon>frm_AffineTransImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_AngleLineLine\DistanceLineLineTool.cs" />
+    <Compile Include="相机工具\_AngleLineLine\frm_DistanceLineLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_AngleLineLine\frm_DistanceLineLine.Designer.cs">
+      <DependentUpon>frm_DistanceLineLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_AnglePointPoint\DistanceAnglePointPointTool.cs" />
+    <Compile Include="相机工具\_AnglePointPoint\frm_AnglePointPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_AnglePointPoint\frm_AnglePointPoint.Designer.cs">
+      <DependentUpon>frm_AnglePointPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_Barcode\2DSymbolTool.cs" />
+    <Compile Include="相机工具\_Barcode\BarcodeTool.cs" />
+    <Compile Include="相机工具\_Barcode\frm_Barcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_Barcode\frm_Barcode.designer.cs">
+      <DependentUpon>frm_Barcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_Blob\BlobTool.cs" />
+    <Compile Include="相机工具\_Blob\frm_Blob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_Blob\frm_Blob.Designer.cs">
+      <DependentUpon>frm_Blob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_Caliper\CaliperTool.cs" />
+    <Compile Include="相机工具\_Caliper\frm_Caliper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_Caliper\frm_Caliper.Designer.cs">
+      <DependentUpon>frm_Caliper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_ColorExtrator\ColorExtractorTool.cs" />
+    <Compile Include="相机工具\_ColorExtrator\frm_ColorExtrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_ColorExtrator\frm_ColorExtrator.Designer.cs">
+      <DependentUpon>frm_ColorExtrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_DetectScratches\DetectScratchesTool.cs" />
+    <Compile Include="相机工具\_DetectScratches\frm_DetectScratches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_DetectScratches\frm_DetectScratches.Designer.cs">
+      <DependentUpon>frm_DetectScratches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_DistancePointLine\DistancePointLineTool.cs" />
+    <Compile Include="相机工具\_DistancePointLine\frm_DistancePointLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_DistancePointLine\frm_DistancePointLine.Designer.cs">
+      <DependentUpon>frm_DistancePointLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_DistancePointPoint\DistancePointPointTool.cs" />
+    <Compile Include="相机工具\_DistancePointPoint\frm_DistancePointPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_DistancePointPoint\frm_DistancePointPoint.designer.cs">
+      <DependentUpon>frm_DistancePointPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_Emphasize\EmphasizeTool.cs" />
+    <Compile Include="相机工具\_Emphasize\frm_Emphasize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_Emphasize\frm_Emphasize.designer.cs">
+      <DependentUpon>frm_Emphasize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_FindCorner\FindCornerTool.cs" />
+    <Compile Include="相机工具\_FindCorner\frm_FindCorner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_FindCorner\frm_FindCorner.Designer.cs">
+      <DependentUpon>frm_FindCorner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_FindEdge\FindEdgeTool.cs" />
+    <Compile Include="相机工具\_FindEdge\frm_FindEdge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_FindEdge\frm_FindEdge.Designer.cs">
+      <DependentUpon>frm_FindEdge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_FindRectangle2\FindRectangle2Tool.cs" />
+    <Compile Include="相机工具\_FindRectangle2\frm_FindRectangle2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_FindRectangle2\frm_FindRectangle2.Designer.cs">
+      <DependentUpon>frm_FindRectangle2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_FitCircle\FitCircleTool.cs" />
+    <Compile Include="相机工具\_FitCircle\frm_FitCircle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_FitCircle\frm_FitCircle.Designer.cs">
+      <DependentUpon>frm_FitCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_FitLine\FitLineTool.cs" />
+    <Compile Include="相机工具\_FitLine\frm_FitLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_FitLine\frm_FitLine.Designer.cs">
+      <DependentUpon>frm_FitLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_Fixture\frm_Fixture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_Fixture\frm_Fixture.Designer.cs">
+      <DependentUpon>frm_Fixture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_frm_2DSymbol\frm_2DSymbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_frm_2DSymbol\frm_2DSymbol.Designer.cs">
+      <DependentUpon>frm_2DSymbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_GrayTophat\frm_GrayTophat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_GrayTophat\frm_GrayTophat.Designer.cs">
+      <DependentUpon>frm_GrayTophat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_GrayTophat\GrayTophatTool.cs" />
+    <Compile Include="相机工具\_HalconScript\frm_HalconScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_HalconScript\frm_HalconScript.designer.cs">
+      <DependentUpon>frm_HalconScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_HalconScript\HalconScript.cs" />
+    <Compile Include="相机工具\_ImageConvert\frm_ImageConvert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_ImageConvert\frm_ImageConvert.Designer.cs">
+      <DependentUpon>frm_ImageConvert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_ImageConvert\ImageConvertTool.cs" />
+    <Compile Include="相机工具\_InspectionBallBonding\frm_InspectionBallBonding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_InspectionBallBonding\frm_InspectionBallBonding.Designer.cs">
+      <DependentUpon>frm_InspectionBallBonding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_InspectionBallBonding\InspectionBallBonding.cs" />
+    <Compile Include="相机工具\_IntersectionLines\frm_IntersectionLines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_IntersectionLines\frm_IntersectionLines.Designer.cs">
+      <DependentUpon>frm_IntersectionLines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_IntersectionLines\IntersectionLines.cs" />
+    <Compile Include="相机工具\_InvertImage\frm_InvertImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_InvertImage\frm_InvertImage.Designer.cs">
+      <DependentUpon>frm_InvertImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_InvertImage\InvertImageTool.cs" />
+    <Compile Include="相机工具\_MeanImage\frm_MeanImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_MeanImage\frm_MeanImage.Designer.cs">
+      <DependentUpon>frm_MeanImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_MeanImage\MeanImageTool.cs" />
+    <Compile Include="相机工具\_MedianImage\frm_MedianImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_MedianImage\frm_MedianImage.Designer.cs">
+      <DependentUpon>frm_MedianImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_MedianImage\MedianImageTool.cs" />
+    <Compile Include="相机工具\_Morphology\frm_Morphology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_Morphology\frm_Morphology.Designer.cs">
+      <DependentUpon>frm_Morphology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_Morphology\MorphologyTool.cs" />
+    <Compile Include="相机工具\_OCRMax\frm_OCRMax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_OCRMax\frm_OCRMax.designer.cs">
+      <DependentUpon>frm_OCRMax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_OCRMax\OCRMaxTool.cs" />
+    <Compile Include="相机工具\_PatInspect\frm_PatInspect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_PatInspect\frm_PatInspect.Designer.cs">
+      <DependentUpon>frm_PatInspect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_PatInspect\PatInspectTool.cs" />
+    <Compile Include="相机工具\_PMAlign\frm_PMAlign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_PMAlign\frm_PMAlign.designer.cs">
+      <DependentUpon>frm_PMAlign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_PMAlign\PMAlignTool.cs" />
+    <Compile Include="相机工具\_ProjectiveTransImage\frm_ProjectiveTransImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_ProjectiveTransImage\frm_ProjectiveTransImage.Designer.cs">
+      <DependentUpon>frm_ProjectiveTransImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_ProjectiveTransImage\ProjectiveTransImage.cs" />
+    <Compile Include="相机工具\_RoiCreate\frm_RoiCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_RoiCreate\frm_RoiCreate.Designer.cs">
+      <DependentUpon>frm_RoiCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_RoiCreate\RoiCreateTool.cs" />
+    <Compile Include="相机工具\_RoiOpUnion\frm_RoiOpUnion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_RoiOpUnion\frm_RoiOpUnion.Designer.cs">
+      <DependentUpon>frm_RoiOpUnion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_RoiOpUnion\RoiOpUnionTool.cs" />
+    <Compile Include="相机工具\_RotateImage\frm_RotateImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_RotateImage\frm_RotateImage.Designer.cs">
+      <DependentUpon>frm_RotateImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_RotateImage\RotateImageTool.cs" />
+    <Compile Include="相机工具\_ScaleImage\frm_ScaleImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_ScaleImage\frm_ScaleImage.Designer.cs">
+      <DependentUpon>frm_ScaleImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_ScaleImage\ScaleImageTool.cs" />
+    <Compile Include="相机工具\_Smooth\frm_Smooth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_Smooth\frm_Smooth.Designer.cs">
+      <DependentUpon>frm_Smooth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_Smooth\SmoothImageTool.cs" />
+    <Compile Include="相机工具\_SurfaceFlaw\frm_SurfaceFlaw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_SurfaceFlaw\frm_SurfaceFlaw.Designer.cs">
+      <DependentUpon>frm_SurfaceFlaw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_SurfaceFlaw\SurfaceFlawTool.cs" />
+    <Compile Include="相机工具\_SurfaceStains\frm_SurfaceStains.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_SurfaceStains\frm_SurfaceStains.Designer.cs">
+      <DependentUpon>frm_SurfaceStains.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_SurfaceStains\SurfaceStainsTool.cs" />
+    <Compile Include="相机工具\_TransPolar\frm_TransPolar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\_TransPolar\frm_TransPolar.Designer.cs">
+      <DependentUpon>frm_TransPolar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\_TransPolar\TransPolarTool.cs" />
+    <Compile Include="相机工具\保存图像\frm_SaveImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\保存图像\frm_SaveImage.designer.cs">
+      <DependentUpon>frm_SaveImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="相机工具\保存图像\SaveImageTool.cs" />
+    <Compile Include="相机工具\采集图片\AcqFifoTool.cs" />
+    <Compile Include="相机工具\采集图片\frm_AcqFifo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="相机工具\采集图片\frm_AcqFifo.designer.cs">
+      <DependentUpon>frm_AcqFifo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="辅助界面\数据库.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="辅助界面\数据库.Designer.cs">
+      <DependentUpon>数据库.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AuthorityManagement\FormAuthorityUpdate.resx">
+      <DependentUpon>FormAuthorityUpdate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthorityManagement\FormAutorityManage.resx">
+      <DependentUpon>FormAutorityManage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthorityManagement\FormInterfaceManage.resx">
+      <DependentUpon>FormInterfaceManage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthorityManagement\FormUserLogoin.resx">
+      <DependentUpon>FormUserLogoin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis_setting\Aisx_FormHardSetting.resx">
+      <DependentUpon>Aisx_FormHardSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis_setting\FormAxisSetting.resx">
+      <DependentUpon>FormAxisSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardSetting\FormHardSetting.resx">
+      <DependentUpon>FormHardSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardSetting\GoogolTechExtCardInfoForm.resx">
+      <DependentUpon>GoogolTechExtCardInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardSetting\GoolGaoHardSettingForm.resx">
+      <DependentUpon>GoolGaoHardSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication\FormCommunicationSetting.resx">
+      <DependentUpon>FormCommunicationSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication\networkSer.resx">
+      <DependentUpon>networkSer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication\network.resx">
+      <DependentUpon>network.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication\SerialPortFrom.resx">
+      <DependentUpon>SerialPortFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManage\FormProjectData.resx">
+      <DependentUpon>FormProjectData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManage\FormProjectDataItemMonitor.resx">
+      <DependentUpon>FormProjectDataItemMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManage\FormProjectDataItemSetting.resx">
+      <DependentUpon>FormProjectDataItemSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManage\FormProjectDataMonitor.resx">
+      <DependentUpon>FormProjectDataMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManage\FormProjectDataSetting.resx">
+      <DependentUpon>FormProjectDataSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateGroup\DateGroup_From.resx">
+      <DependentUpon>DateGroup_From.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateGroup\DateGroup_Setting.resx">
+      <DependentUpon>DateGroup_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\DrawTool_From.resx">
+      <DependentUpon>DrawTool_From.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\DrawTool_Setting.resx">
+      <DependentUpon>DrawTool_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlowChar\FlowCharForm.resx">
+      <DependentUpon>FlowCharForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlowChar\FlowChar_From.resx">
+      <DependentUpon>FlowChar_From.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOSetting\FormIOSetting.resx">
+      <DependentUpon>FormIOSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOSetting\IoChangeName.resx">
+      <DependentUpon>IoChangeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOSetting\IO_FormHardSetting.resx">
+      <DependentUpon>IO_FormHardSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForm\AnalogQuantityFormSetting.resx">
+      <DependentUpon>AnalogQuantityFormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForm\AnalogQuantityOutFrom.resx">
+      <DependentUpon>AnalogQuantityOutFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForm\OtherFormSetting.resx">
+      <DependentUpon>OtherFormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForm\波形展示.resx">
+      <DependentUpon>波形展示.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC\PLC_From.resx">
+      <DependentUpon>PLC_From.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC\PLC_Setting.resx">
+      <DependentUpon>PLC_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointSetting\PointSetting_Form.resx">
+      <DependentUpon>PointSetting_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointSetting\Point_Form.resx">
+      <DependentUpon>Point_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointSet\PointSet_From.resx">
+      <DependentUpon>PointSet_From.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointSet\PointSet_Setting.resx">
+      <DependentUpon>PointSet_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Splash\FrmSplashScreen.resx">
+      <DependentUpon>FrmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TEST12.resx">
+      <DependentUpon>TEST12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\AxisStateViewForm.resx">
+      <DependentUpon>AxisStateViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\CCDForm.resx">
+      <DependentUpon>CCDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\CheckData.resx">
+      <DependentUpon>CheckData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\DebugForm.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\DemarcateForm.resx">
+      <DependentUpon>DemarcateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\ExamineForm.resx">
+      <DependentUpon>ExamineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\FormAlarm.resx">
+      <DependentUpon>FormAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\InFormationForm.resx">
+      <DependentUpon>InFormationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\IODebugForm.resx">
+      <DependentUpon>IODebugForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForm\OtherForm.resx">
+      <DependentUpon>OtherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\LaserContorlForm.resx">
+      <DependentUpon>LaserContorlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\MESSettingForm.resx">
+      <DependentUpon>MESSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\OperateDirectionsForm.resx">
+      <DependentUpon>OperateDirectionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\Parameter.resx">
+      <DependentUpon>Parameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\ParamSettingForm.resx">
+      <DependentUpon>ParamSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主要界面\SystemSettings.resx">
+      <DependentUpon>SystemSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\Frm_Job.resx">
+      <DependentUpon>Frm_Job.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\IOTooL\输入分类\输入检测\Check_INPUTFrom.resx">
+      <DependentUpon>Check_INPUTFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\IOTooL\输出分类\先延时后输出\F_Delay_DeOutPutFrom.resx">
+      <DependentUpon>F_Delay_DeOutPutFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\IOTooL\输出分类\先输出后延时\F_OutPut_DDelayFrom.resx">
+      <DependentUpon>F_OutPut_DDelayFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\IOTooL\输出分类\脉冲输出\OutPut_PulseFrom.resx">
+      <DependentUpon>OutPut_PulseFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\IOTooL\输出分类\输出\OutPutFrom.resx">
+      <DependentUpon>OutPutFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\MES工具\过站校验\校验\Check_ProductFrom.resx">
+      <DependentUpon>Check_ProductFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\动作融合\交叉螺旋\Cross_SpiralFrom.resx">
+      <DependentUpon>Cross_SpiralFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\动作融合\圆\CirFrom.resx">
+      <DependentUpon>CirFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\动作融合\正方形\DimetricFrom.resx">
+      <DependentUpon>DimetricFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\动作融合\螺旋\SpiralFrom.resx">
+      <DependentUpon>SpiralFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\延时\DelayFrom.resx">
+      <DependentUpon>DelayFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\插补\三轴直线插补\LnXYZFrom.resx">
+      <DependentUpon>LnXYZFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\插补\两轴圆弧插补\ArcXYCFrom.resx">
+      <DependentUpon>ArcXYCFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\插补\两轴直线插补\LnXYFrom.resx">
+      <DependentUpon>LnXYFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\插补\四轴直线插补\LnXYZAFrom.resx">
+      <DependentUpon>LnXYZAFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\插补\缓存区插入其他\AddOtherBuffFrom.resx">
+      <DependentUpon>AddOtherBuffFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\数据组\DataGroupFrom.resx">
+      <DependentUpon>DataGroupFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\条件判断\条件判断步骤跳转\LogicalJumpFrom.resx">
+      <DependentUpon>LogicalJumpFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\条件判断\条件判断调子流程主\CallSubroutineFrom.resx">
+      <DependentUpon>CallSubroutineFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\测距工具\数字量数据\DigitalMea_HeighFrom.resx">
+      <DependentUpon>DigitalMea_HeighFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\相机工具\定制功能\相机补偿\CamerCompensation_CenterFrom.resx">
+      <DependentUpon>CamerCompensation_CenterFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\相机工具\定制功能\焊后拍照检\WeldedCheckForm.resx">
+      <DependentUpon>WeldedCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\相机工具\定制功能\获取圆心坐标\CamerGetR_CenterFrom.resx">
+      <DependentUpon>CamerGetR_CenterFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\算术细分\与\AndFrom.resx">
+      <DependentUpon>AndFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\算术细分\异或\XOrFrom.resx">
+      <DependentUpon>XOrFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\算术细分\或\OrFrom.resx">
+      <DependentUpon>OrFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\算术细分\非\NegFrom.resx">
+      <DependentUpon>NegFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\缓存区控制列表\BufferAreaFrom.resx">
+      <DependentUpon>BufferAreaFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\脚本\CodeEditTool\Frm_CodeEditTool.resx">
+      <DependentUpon>Frm_CodeEditTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\脚本\PY脚本\PYToolFrom.resx">
+      <DependentUpon>PYToolFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\自定义方法3\DefintionFunFrom3.resx">
+      <DependentUpon>DefintionFunFrom3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\自定义方法2\DefintionFunFrom2.resx">
+      <DependentUpon>DefintionFunFrom2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\自定义方法4\DefintionFunFrom4.resx">
+      <DependentUpon>DefintionFunFrom4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\自定义方法\DefintionFunFrom.resx">
+      <DependentUpon>DefintionFunFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\轴运动控制\单轴运动\单轴运动\Aixs_one_CtronFrom.resx">
+      <DependentUpon>Aixs_one_CtronFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\轴运动控制\单轴运动\检测轴运动完成\CheckAixsRunFinishFrom.resx">
+      <DependentUpon>CheckAixsRunFinishFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\轴运动控制\多轴运动\多轴检测轴运动完成\Aixs_more_CtronRunFinishFrom.resx">
+      <DependentUpon>Aixs_more_CtronRunFinishFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\轴运动控制\多轴运动\多轴运动\Aixs_more_CtronFrom.resx">
+      <DependentUpon>Aixs_more_CtronFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\通讯\串口通讯\串口通讯发送命令\SerialPortSendDataFrom.resx">
+      <DependentUpon>SerialPortSendDataFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\通讯\串口通讯\串口通讯接受指令\SerialPortResDataFrom.resx">
+      <DependentUpon>SerialPortResDataFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\通讯\网络通讯\网络通讯发送命令\_ser_clSendDataFrom.resx">
+      <DependentUpon>_ser_clSendDataFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\通讯\网络通讯\网络通讯接受指令\_ser_clResDataFrom.resx">
+      <DependentUpon>_ser_clResDataFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工具\金橙子\EzdKernelForm.resx">
+      <DependentUpon>EzdKernelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\ImageShow\HW.resx">
+      <DependentUpon>HW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_9PointCalib\frm_9PointCalib.resx">
+      <DependentUpon>frm_9PointCalib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_AffineTransImage\frm_AffineTransImage.resx">
+      <DependentUpon>frm_AffineTransImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_AngleLineLine\frm_DistanceLineLine.resx">
+      <DependentUpon>frm_DistanceLineLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_AnglePointPoint\frm_AnglePointPoint.resx">
+      <DependentUpon>frm_AnglePointPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_Barcode\frm_Barcode.resx">
+      <DependentUpon>frm_Barcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_Blob\frm_blob.resx">
+      <DependentUpon>frm_Blob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_Caliper\frm_Caliper.resx">
+      <DependentUpon>frm_Caliper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_ColorExtrator\frm_ColorExtrator.resx">
+      <DependentUpon>frm_ColorExtrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_DetectScratches\frm_DetectScratches.resx">
+      <DependentUpon>frm_DetectScratches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_DistancePointLine\frm_DistancePointLine.resx">
+      <DependentUpon>frm_DistancePointLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_DistancePointPoint\frm_DistancePointPoint.resx">
+      <DependentUpon>frm_DistancePointPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_Emphasize\frm_Emphasize.resx">
+      <DependentUpon>frm_Emphasize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_FindCorner\frm_FindCorner.resx">
+      <DependentUpon>frm_FindCorner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_FindEdge\frm_FindEdge.resx">
+      <DependentUpon>frm_FindEdge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_FindRectangle2\frm_FindRectangle2.resx">
+      <DependentUpon>frm_FindRectangle2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_FitCircle\frm_FitCircle.resx">
+      <DependentUpon>frm_FitCircle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_FitLine\frm_FitLine.resx">
+      <DependentUpon>frm_FitLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_Fixture\frm_Fixture.resx">
+      <DependentUpon>frm_Fixture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_frm_2DSymbol\frm_2DSymbol.resx">
+      <DependentUpon>frm_2DSymbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_GrayTophat\frm_GrayTophat.resx">
+      <DependentUpon>frm_GrayTophat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_HalconScript\frm_HalconScript.resx">
+      <DependentUpon>frm_HalconScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_ImageConvert\frm_ImageConvert.resx">
+      <DependentUpon>frm_ImageConvert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_InspectionBallBonding\frm_InspectionBallBonding.resx">
+      <DependentUpon>frm_InspectionBallBonding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_IntersectionLines\frm_IntersectionLines.resx">
+      <DependentUpon>frm_IntersectionLines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_InvertImage\frm_InvertImage.resx">
+      <DependentUpon>frm_InvertImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_MeanImage\frm_MeanImage.resx">
+      <DependentUpon>frm_MeanImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_MedianImage\frm_MedianImage.resx">
+      <DependentUpon>frm_MedianImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_Morphology\frm_Morphology.resx">
+      <DependentUpon>frm_Morphology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_OCRMax\frm_OCRMax.resx">
+      <DependentUpon>frm_OCRMax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_PatInspect\frm_PatInspect.resx">
+      <DependentUpon>frm_PatInspect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_PMAlign\frm_PMAlign.resx">
+      <DependentUpon>frm_PMAlign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_ProjectiveTransImage\frm_ProjectiveTransImage.resx">
+      <DependentUpon>frm_ProjectiveTransImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_RoiCreate\frm_RoiCreate.resx">
+      <DependentUpon>frm_RoiCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_RoiOpUnion\frm_RoiOpUnion.resx">
+      <DependentUpon>frm_RoiOpUnion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_RotateImage\frm_RotateImage.resx">
+      <DependentUpon>frm_RotateImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_ScaleImage\frm_ScaleImage.resx">
+      <DependentUpon>frm_ScaleImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_Smooth\frm_Smooth.resx">
+      <DependentUpon>frm_Smooth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_SurfaceFlaw\frm_SurfaceFlaw.resx">
+      <DependentUpon>frm_SurfaceFlaw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_SurfaceStains\frm_SurfaceStains.resx">
+      <DependentUpon>frm_SurfaceStains.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\_TransPolar\frm_TransPolar.resx">
+      <DependentUpon>frm_TransPolar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\保存图像\frm_SaveImage.resx">
+      <DependentUpon>frm_SaveImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="相机工具\采集图片\frm_AcqFifo.resx">
+      <DependentUpon>frm_AcqFifo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="辅助界面\数据库.resx">
+      <DependentUpon>数据库.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Axis_setting\bin\Debug\WindowsFormsApplication1.exe.config" />
+    <None Include="Axis_setting\bin\Debug\WindowsFormsApplication1.vshost.exe.config" />
+    <None Include="Axis_setting\bin\x64\Debug\ExtMdl1.cfg" />
+    <None Include="Axis_setting\bin\x64\Debug\ExtMdl10.cfg" />
+    <None Include="Axis_setting\bin\x64\Debug\ExtModule.cfg" />
+    <None Include="Axis_setting\bin\x64\Debug\ExtModule10固高.cfg" />
+    <None Include="Axis_setting\bin\x64\Debug\GTS800.cfg" />
+    <None Include="Axis_setting\bin\x64\Debug\WindowsFormsApplication1.exe.config" />
+    <None Include="Axis_setting\bin\x64\Debug\WindowsFormsApplication1.vshost.exe.config" />
+    <None Include="Axis_setting\bin\x64\Debug\WindowsFormsApplication1.vshost.exe.manifest" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\WebReference\MESInterface.wsdl" />
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Axis_setting\bin\Debug\Parameter\CardDate_Save.xml" />
+    <Content Include="Axis_setting\bin\Debug\WindowsFormsApplication1.exe" />
+    <Content Include="Axis_setting\bin\Debug\WindowsFormsApplication1.pdb" />
+    <Content Include="Axis_setting\bin\Debug\WindowsFormsApplication1.vshost.exe" />
+    <Content Include="Axis_setting\bin\x64\Debug\ExtMdl.dll" />
+    <Content Include="Axis_setting\bin\x64\Debug\ExtMdl固高.dll" />
+    <Content Include="Axis_setting\bin\x64\Debug\gts - 副本.dll" />
+    <Content Include="Axis_setting\bin\x64\Debug\gts.dll" />
+    <Content Include="Axis_setting\bin\x64\Debug\Parameter\Aisx_Hard.xml" />
+    <Content Include="Axis_setting\bin\x64\Debug\Parameter\CardDate_Save.xml" />
+    <Content Include="Axis_setting\bin\x64\Debug\Parameter\IOCardDate_Save.xml" />
+    <Content Include="Axis_setting\bin\x64\Debug\WindowsFormsApplication1.exe" />
+    <Content Include="Axis_setting\bin\x64\Debug\WindowsFormsApplication1.pdb" />
+    <Content Include="Axis_setting\bin\x64\Debug\WindowsFormsApplication1.vshost.exe" />
+    <Content Include="Resources\1.png" />
+    <Content Include="Resources\12获.PNG" />
+    <Content Include="Resources\17 - 复制.png" />
+    <Content Include="Resources\17.png" />
+    <Content Include="Resources\18.png" />
+    <Content Include="Resources\19.png" />
+    <Content Include="Resources\2.png" />
+    <Content Include="Resources\20.png" />
+    <None Include="Web References\WebReference\MESInterface.disco" />
+    <None Include="Resources\2DUncodeTool.png" />
+    <Content Include="Resources\3.png" />
+    <Content Include="Resources\4.png" />
+    <Content Include="Resources\4963_home.png" />
+    <Content Include="Resources\573.png" />
+    <Content Include="Resources\578.png" />
+    <Content Include="Resources\591.png" />
+    <Content Include="Resources\627.png" />
+    <Content Include="Resources\93.png" />
+    <Content Include="Resources\Admin.png" />
+    <None Include="Resources\AngleLLTool.png" />
+    <None Include="Resources\AngleLLTool1.png" />
+    <Content Include="Resources\asunderNode.png" />
+    <Content Include="Resources\attribute.png" />
+    <Content Include="Resources\back1.gif" />
+    <Content Include="Resources\back2.gif" />
+    <Content Include="Resources\back3.gif" />
+    <Content Include="Resources\back4.gif" />
+    <Content Include="Resources\back5.gif" />
+    <Content Include="Resources\background.jpg" />
+    <Content Include="Resources\background.png" />
+    <None Include="Resources\BarCodeTool.png" />
+    <Content Include="Resources\bar_code.png" />
+    <None Include="Resources\BlobAnalyseTool.png" />
+    <Content Include="Resources\btn1.png" />
+    <None Include="Resources\ButtonDown.png" />
+    <None Include="Resources\ButtonUp.png" />
+    <Content Include="Resources\ccd.png" />
+    <None Include="Resources\Client.png" />
+    <Content Include="Resources\cnc_machine_128px_1169812_easyicon.net.ico" />
+    <None Include="Resources\ColorToRGBTool.png" />
+    <None Include="Resources\CodeEditTool.png" />
+    <Content Include="Resources\convergeNode.png" />
+    <None Include="Resources\CoorTransTool.png" />
+    <None Include="Resources\CreatePosTool.png" />
+    <None Include="Resources\CreateROITool.png" />
+    <Content Include="Resources\d1.png" />
+    <Content Include="Resources\d2.png" />
+    <Content Include="Resources\d3.png" />
+    <Content Include="Resources\d4.png" />
+    <Content Include="Resources\d5.png" />
+    <Content Include="Resources\database.png" />
+    <Content Include="Resources\dataNode.png" />
+    <None Include="Resources\Debug.png" />
+    <None Include="Resources\Delete1.png" />
+    <None Include="Resources\Dimension CalibTool.png" />
+    <None Include="Resources\Disable.png" />
+    <None Include="Resources\DistanceLLTool.png" />
+    <None Include="Resources\DistancePLTool.png" />
+    <None Include="Resources\DistancePPTool.png" />
+    <None Include="Resources\DownCameraAlignTool.png" />
+    <None Include="Resources\Empty.png" />
+    <None Include="Resources\Enable.png" />
+    <None Include="Resources\dj.jpg" />
+    <Content Include="Resources\endNode.png" />
+    <None Include="Resources\Error.png" />
+    <None Include="Resources\EyeHandCalibTool.png" />
+    <None Include="Resources\FindCircleTool.png" />
+    <None Include="Resources\FitCircleTool.png" />
+    <None Include="Resources\FitLineTool.png" />
+    <Content Include="Resources\foreground.png" />
+    <Content Include="Resources\gatherNode.png" />
+    <Content Include="Resources\generalNode.png" />
+    <None Include="Resources\GenSegmentTool.png" />
+    <Content Include="Resources\gradationNode.png" />
+    <None Include="Resources\Green.png" />
+    <Content Include="Resources\Home.png" />
+    <Content Include="Resources\icon-1200_16%402x%281%29.png" />
+    <Content Include="Resources\icon-1200_16%402x%282%29.png" />
+    <Content Include="Resources\icon-1200_16%402x%283%29.png" />
+    <Content Include="Resources\icon-1200_16%402x%284%29.png" />
+    <Content Include="Resources\icon-1200_16%402x%285%29.png" />
+    <Content Include="Resources\icon-1200_16%402x%286%29.png" />
+    <Content Include="Resources\icon-1200_16%402x%287%29.png" />
+    <None Include="Resources\Image.bmp" />
+    <None Include="Resources\ImageProprocessingTool.png" />
+    <Content Include="Resources\jq.png" />
+    <Content Include="Resources\judgementNode.png" />
+    <None Include="Resources\LabelTool.png" />
+    <Content Include="Resources\lamp_green.png" />
+    <Content Include="Resources\lamp_red.png" />
+    <Content Include="Resources\lamp_white.png" />
+    <Content Include="Resources\left.gif" />
+    <None Include="Resources\LightTool.png" />
+    <None Include="Resources\LineCalib.png" />
+    <None Include="Resources\LLPointTool.png" />
+    <None Include="Resources\Lock.png" />
+    <Content Include="Resources\log.png" />
+    <Content Include="Resources\Login.ico" />
+    <Content Include="Resources\Logo.ico" />
+    <Content Include="Resources\Logo.png" />
+    <Content Include="Resources\Logo1.png" />
+    <Content Include="Resources\Logo2.png" />
+    <Content Include="Resources\MainForm.png" />
+    <None Include="Resources\MarkTool.png" />
+    <Content Include="Resources\matte_white.png" />
+    <None Include="Resources\max.png" />
+    <Content Include="Resources\message.jpg" />
+    <None Include="Resources\min.png" />
+    <Content Include="Resources\newFlow.jpg" />
+    <Content Include="Resources\notepad_ok_128px_1170517_easyicon.net.ico" />
+    <None Include="Resources\OCRTool.png" />
+    <None Include="Resources\Off.png" />
+    <None Include="Resources\On.png" />
+    <Content Include="Resources\ooopic_1490957024.ico" />
+    <Content Include="Resources\ooopic_1490960165.png" />
+    <None Include="Resources\OutputTool.png" />
+    <Content Include="Resources\ParameterSet.png" />
+    <Content Include="Resources\password_128px_1169936_easyicon.net.ico" />
+    <Content Include="Resources\power_exit.png" />
+    <Content Include="Resources\power_exit_118px_1122609_easyicon.net.png" />
+    <None Include="Resources\Product1.png" />
+    <Content Include="Resources\ProductRun.png" />
+    <Content Include="Resources\ProfibusCoupler.bmp" />
+    <None Include="Resources\Red.png" />
+    <None Include="Resources\Region.png" />
+    <None Include="Resources\RegionArrayTool.png" />
+    <None Include="Resources\RegionFeature.png" />
+    <Content Include="Resources\Reset.png" />
+    <Content Include="Resources\right.gif" />
+    <None Include="Resources\Robot.png" />
+    <None Include="Resources\Rotate.png" />
+    <Content Include="Resources\run.png" />
+    <None Include="Resources\SaveImageTool.png" />
+    <None Include="Resources\Sever.png" />
+    <Content Include="Resources\simplicity Icon 05.ico" />
+    <Content Include="Resources\specificallyOperationNode.png" />
+    <Content Include="Resources\Start.png" />
+    <Content Include="Resources\Start1.png" />
+    <Content Include="Resources\startNode.png" />
+    <Content Include="Resources\Stop %282%29.png" />
+    <Content Include="Resources\stop.png" />
+    <None Include="Resources\String.png" />
+    <None Include="Resources\SubImageTool.png" />
+    <Content Include="Resources\synchronizationNode.png" />
+    <Content Include="Resources\Thumbs.db" />
+    <Content Include="Resources\timg %281%29.gif" />
+    <None Include="Resources\Tip.png" />
+    <None Include="Resources\ToolBox.png" />
+    <None Include="Resources\TwoPointCenterTool.png" />
+    <None Include="Resources\UnknownTool.png" />
+    <Content Include="Resources\user_128px_1170241_easyicon.net.ico" />
+    <Content Include="Resources\Vision_Active.jpg" />
+    <None Include="Resources\Warn.png" />
+    <None Include="Resources\WhileTool.png" />
+    <Content Include="Resources\World.png" />
+    <Content Include="Resources\World1.bmp" />
+    <Content Include="Resources\World1.png" />
+    <Content Include="Resources\xp1g_10.bmp" />
+    <Content Include="Resources\xp1g_20.bmp" />
+    <Content Include="Resources\xp1g_30.bmp" />
+    <Content Include="Resources\xp1g_40.bmp" />
+    <None Include="Resources\分割斜线.png" />
+    <None Include="Resources\图像.png" />
+    <None Include="Resources\上一个 %281%29.png" />
+    <None Include="Resources\上上.png" />
+    <None Include="Resources\上一个000.png" />
+    <None Include="Resources\放大 %282%29.png" />
+    <None Include="Resources\按钮.png" />
+    <None Include="Resources\下 移.png" />
+    <None Include="Resources\上 移1.png" />
+    <None Include="Resources\上一个 %283%29.png" />
+    <None Include="Resources\下下.png" />
+    <None Include="Resources\上一个 %282%29.png" />
+    <None Include="Resources\参数配置 %281%29.png" />
+    <None Include="Resources\参数配置.png" />
+    <None Include="Resources\XY.png" />
+    <None Include="Resources\Yellow.png" />
+    <None Include="Resources\按钮 %281%29.png" />
+    <None Include="Resources\按钮 %282%29.png" />
+    <None Include="Resources\查找 %281%29.png" />
+    <None Include="Resources\查找3.png" />
+    <None Include="Resources\大屏展示.png" />
+    <None Include="Resources\底部对齐.png" />
+    <None Include="Resources\发送区.png" />
+    <None Include="Resources\分支.png" />
+    <None Include="Resources\服务器.png" />
+    <None Include="Resources\复位.png" />
+    <None Include="Resources\复位 %281%29.png" />
+    <None Include="Resources\复选框.png" />
+    <None Include="Resources\勾选.png" />
+    <None Include="Resources\关.png" />
+    <None Include="Resources\光照度-允乐.png" />
+    <None Include="Resources\急速退款.png" />
+    <None Include="Resources\急速退款 %281%29.png" />
+    <None Include="Resources\接收区.png" />
+    <None Include="Resources\开.png" />
+    <None Include="Resources\开关 关 %281%29.png" />
+    <None Include="Resources\开关 关 %282%29.png" />
+    <None Include="Resources\开关 关 %283%29.png" />
+    <None Include="Resources\开关 关.png" />
+    <None Include="Resources\客户端.png" />
+    <None Include="Resources\客户端1.png" />
+    <None Include="Resources\偏移.png" />
+    <None Include="Resources\启动.png" />
+    <None Include="Resources\启动 %281%29.png" />
+    <None Include="Resources\去复选框.png" />
+    <None Include="Resources\去勾选.png" />
+    <None Include="Resources\扫码枪.png" />
+    <None Include="Resources\扫码枪 %281%29.png" />
+    <None Include="Resources\删 除4.png" />
+    <None Include="Resources\上一个.png" />
+    <None Include="Resources\停止.png" />
+    <None Include="Resources\停止 %281%29.png" />
+    <None Include="Resources\停止 %2811111%29.png" />
+    <None Include="Resources\停止1.png" />
+    <None Include="Resources\停止222.png" />
+    <None Include="Resources\图像 %287%29.png" />
+    <None Include="Resources\图像00.png" />
+    <None Include="Resources\显示模版.png" />
+    <None Include="Resources\循环.png" />
+    <None Include="Resources\圆.png" />
+    <None Include="Resources\主页.png" />
+    <None Include="Resources\主页 %283%29.png" />
+    <None Include="Resources\字符.png" />
+    <None Include="Resources\捕获.PNG" />
+    <Content Include="Resources\欣旺达logo.png" />
+    <None Include="Resources\登录 %281%29.png" />
+    <None Include="Resources\登录.png" />
+    <None Include="Resources\钉子 %283%29.png" />
+    <None Include="Resources\电机 %286%29.png" />
+    <None Include="Resources\电机 %288%29.png" />
+    <None Include="Resources\顶部对齐.png" />
+    <None Include="Resources\钉.png" />
+    <None Include="Resources\输出管理.png" />
+    <None Include="Resources\锁定.png" />
+    <None Include="Resources\锁定 %281%29.png" />
+    <None Include="Resources\添加 %281%29.png" />
+    <None Include="Resources\添加 %282%29.png" />
+    <None Include="Resources\退出.png" />
+    <None Include="Resources\退出777.png" />
+    <None Include="Resources\系统 %283%29.png" />
+    <None Include="Resources\系统 %285%29.png" />
+    <None Include="Resources\阵列.png" />
+    <None Include="Resources\正方形.png" />
+    <None Include="Resources\正方形 %281%29.png" />
+    <None Include="Resources\正方形 %282%29.png" />
+    <None Include="Resources\正方形 %283%29.png" />
+    <None Include="Resources\正方形 %284%29.png" />
+    <None Include="Resources\正方形 %285%29.png" />
+    <None Include="Resources\正方形 %286%29.png" />
+    <None Include="Resources\正方形 %287%29.png" />
+    <None Include="Resources\组合表格.png" />
+    <None Include="Resources\点位设置.jpg" />
+    <Content Include="simplicity Icon 05.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Axis_setting\bin\Release\" />
+    <Folder Include="HomeFlow\" />
+    <Folder Include="工具\LOOPSTART\" />
+    <Folder Include="工具\LOOPSTOP\" />
+    <Folder Include="工具\MES\" />
+    <Folder Include="工具\MES工具\内阻测试\启动测试\" />
+    <Folder Include="工具\MES工具\内阻测试\获取测试数据\" />
+    <Folder Include="工具\MES工具\打印\打印条码\" />
+    <Folder Include="工具\MES工具\打印\生成打印条码\" />
+    <Folder Include="工具\MES工具\气密性测试\启动测试\" />
+    <Folder Include="工具\MES工具\气密性测试\获取测试数据\" />
+    <Folder Include="工具\MES工具\螺丝枪\打螺丝\" />
+    <Folder Include="工具\MES工具\螺丝枪\数据获取\" />
+    <Folder Include="工具\MES工具\螺丝枪\解锁\" />
+    <Folder Include="工具\MES工具\螺丝枪\连接\" />
+    <Folder Include="工具\MES工具\螺丝枪\选择程序号\" />
+    <Folder Include="工具\MES工具\过站校验\扫码\" />
+    <Folder Include="工具\MES工具\过站校验\获取SN\" />
+    <Folder Include="工具\MES工具\过站校验\过站\" />
+    <Folder Include="工具\PLC\向PLC写入数据\" />
+    <Folder Include="工具\PLC\读取PLC数据\" />
+    <Folder Include="工具\回原点\" />
+    <Folder Include="工具\工位互锁\" />
+    <Folder Include="工具\插补\三轴螺旋插补\" />
+    <Folder Include="工具\数据分析\大于\" />
+    <Folder Include="工具\数据分析\大于等于\" />
+    <Folder Include="工具\数据分析\小于\" />
+    <Folder Include="工具\数据分析\小于等于\" />
+    <Folder Include="工具\数据分析\等于\" />
+    <Folder Include="工具\测距工具\模拟量数据\" />
+    <Folder Include="工具\激光控制\" />
+    <Folder Include="工具\相机工具\基恩士线扫相机\基恩士CLP070\" />
+    <Folder Include="工具\相机工具\基恩士线扫相机\基恩士LJX8020\" />
+    <Folder Include="工具\相机工具\基恩士线扫相机\基恩士LJX8060\" />
+    <Folder Include="工具\相机工具\定制功能\获取正方形中心坐标\" />
+    <Folder Include="工具\解除工位互锁\" />
+    <Folder Include="相机工具\_Calibration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.160.88.101:8087/MESInterface.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://10.160.88.101:8087/MESInterface.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>UniversalControlSystem_WebReference_MESInterface</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

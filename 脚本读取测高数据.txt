@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.IO.Ports;
+using System.Threading;
+namespace MyApplication
+{
+    public class TestClass
+    {    
+
+        static void Main(string args)
+        {
+            double data=0;
+             
+            byte[] buffer = new byte[6];
+          
+            byte[] m_SendByte = new byte[6];
+            m_SendByte[0] = 0x02;
+            m_SendByte[1] = 0x43;
+            m_SendByte[2] = 0xB0;
+            m_SendByte[3] = 0x01;
+            m_SendByte[4] = 0x03;
+            m_SendByte[5] = 0xF2;
+            try         
+            { 
+                    System.IO.Ports.SerialPort COMM = new System.IO.Ports.SerialPort(); 
+                
+                    COMM.PortName = "com2";               
+                    COMM.BaudRate =9600; 
+                       
+                     COMM.StopBits = StopBits.One;
+                        COMM.DataBits = 8; 
+                        COMM.Parity = Parity.Odd;
+               
+                     if (COMM.IsOpen==false )
+                    {   
+                        COMM.Open();            
+                    }
+                
+                   if (COMM.IsOpen == true)
+                    {
+                    COMM.ReadTimeout = 100;
+                    COMM.ReadExisting();
+                    COMM.Write(m_SendByte, 0, m_SendByte.Length);
+                    Thread.Sleep(200);
+                    //string a= serialPort.ReadExisting();
+                    COMM.Read(buffer, 0, buffer.Length);
+                    //byte[] recByte = Encoding.UTF8.GetBytes(rec); 
+                    string sValue = Convert.ToString(buffer[2], 16).PadLeft(2, '0') + Convert.ToString(buffer[3], 16).PadLeft(2, '0');
+                    if (buffer[2] >= 225)
+                        data = -(65536 - Convert.ToInt32(sValue, 16)) * 0.01;
+                    else
+                        data = (Convert.ToInt32(sValue, 16)) * 0.01;
+                    }
+                     COMM.Close();
+                }          
+                catch 
+                { 
+                }
+
+  Console.WriteLine(data.ToString());
+        }
+    }
+}

@@ -1,0 +1,734 @@
+﻿/**
+* 命名空间:  FullyAutomaticLaserJetCoder
+* 功 能   ： N/A
+* 类 名   ： TestDateCom
+* Ver     :  ver1.0.0.0
+* 变更日期:  2019-05-16 09:29:10
+* 负责人  :  wuchenjie 
+* 变更内容:
+* Copyright (c) 2018 Sunwoda Corporation. All rights reserved.
+*┌───────────────────────────────┐
+*│此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露│
+*│版权所有：欣旺达电气技术有限公司 　　　　　　　　　　　　　　 │
+*└───────────────────────────────┘
+*/
+using System;
+using System.Collections.Generic;
+using System.IO.Ports;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Windows.Forms;
+using System.Collections;
+using System.Text.RegularExpressions;
+using System.Collections.Concurrent;
+
+using System.Xml;
+using System.IO;
+using System.Xml.Serialization;
+
+namespace UniversalControlSystem
+{
+
+    public partial class ProductionData
+    {
+        //  public List<ProductionData> m_ProductionData;
+      
+        string stfPath = System.Environment.CurrentDirectory + "\\Production\\ProductionData.xml";
+        public string stfPathForder = System.Environment.CurrentDirectory;
+        private static ProductionData ProductionD;
+        public static ProductionData Instance()
+        {
+            if (ProductionD == null)
+            {
+                ProductionD = new ProductionData(0);
+            }
+            return ProductionD;
+        }
+        public ProductionData()
+        {
+            // CreatFolderNew(stfPathForder);
+        }
+        public void CreatFolderNew(string rootPath)
+        {
+            if (!Directory.Exists(rootPath))
+            {
+                Directory.CreateDirectory(rootPath);
+            }
+        }
+
+        // public List<string> RunDocument = new List<string>();//运行文档列表
+        // public string ModelNo;//机种号
+        // public int OK_date;
+        // public int NG_date;
+        // public int CT_TIME;
+        // /// <summary>
+        // /// 清理铜嘴次数
+        // /// </summary>
+        // public int Clear_TIME;
+        // /// <summary>
+        // /// 清理铜嘴当前次数
+        // /// </summary>
+        // public int Current_TIME;
+        // /// <summary>
+        // /// 调高最小模拟量
+        // /// </summary>
+        public double IncreaseMminimumAnalog;//调高最小模拟量      
+                                             /// <summary>      
+                                             /// 调高最大模拟量              
+                                             /// </summary>
+        public double IncreaseMaximumAnalog;//调高最大模拟量
+
+        /// <summary>      
+        /// Z轴最小坐标              
+        /// </summary>
+        public double Z_AxisMinimumCoordinate;
+
+        /// <summary>      
+        /// Z轴最大坐标              
+        /// </summary>
+        public double Z_AxisMaximumCoordinate;
+
+        /// <summary>      
+        /// 调高关联的数据              
+        /// </summary>
+        public double High_Date;
+        /// <summary>      
+        /// Z轴基准坐标             
+        /// </summary>
+        public double Z_AxialDatum;
+        /// <summary>      
+        /// 基准模拟量       
+        /// </summary>
+        public double BaselineSimulation;
+        /// <summary>      
+        /// X轴基准坐标             
+        /// </summary>
+        public double X_AxialDatum;
+
+        /// <summary>      
+        /// Y轴基准坐标             
+        /// </summary>
+        public double Y_AxialDatum;
+
+
+        // /// <summary>
+        // /// 当前点位
+        // /// </summary>
+        // public int TheCurrentpoint;
+        // /// <summary>
+        // /// 当前产量
+        // /// </summary>
+        // public int TheCurrentProduction;
+        // /// <summary>
+        // /// 焊接功率
+        // /// </summary>
+        // public int TheWeldingPower;
+        // /// <summary>
+        // /// 焊接速度
+        // /// </summary>
+        // public int TheWeldingSpeed;
+        // /// <summary>
+        // /// X偏距
+        // /// </summary>
+        // public double X_Setover;
+        // /// <summary>
+        // /// Y偏距
+        // /// </summary>
+        // /// 
+        // public double Y_Setover;
+
+        // /// <summary>
+        // /// X相机X位置
+        // /// </summary>
+        // public double X_Camera_Position;
+        // /// <summary>
+        // /// 相机Y位置
+        // /// </summary>
+        // public double Y_Camera_Position;
+        // /// <summary>
+        // /// 激光X位置
+        // /// </summary>
+        // public double X_Laser_Position;
+        // /// <summary>
+        // ///激光Y位置
+        // /// </summary>
+        // public double Y_Laser_Position;
+        // /// <summary>
+        // ///开始运行时间
+        // /// </summary>
+        //// DateTime starttime = DateTime.Now;
+        // public DateTime starttime;
+        // /// <summary>
+        // ///结束运行时间
+        // /// </summary>
+
+        // public DateTime endtime;
+
+        // /// <summary>
+        // ///结束CT时间
+        // /// </summary>
+
+        // public string CTtime="0.00";
+        // /// <summary>
+        // ///Z轴安全高度最高
+        // /// </summary>
+
+        // public int SaveHigh_Top ;
+        // /// <summary>
+        // ///Z轴安全高度最低:
+        // /// </summary>
+
+        // public int SaveHigh_Low ;
+
+        // /// <summary>
+        // ///调高最高::
+        // /// </summary>
+
+        // public int AutoZ_High_Top ;
+
+        // /// <summary>
+        // ///调高最低:
+        // /// </summary>
+
+        // public int AutoZ_High_Low ;
+        // public string SN;
+        // public bool LeftRun;
+        // public bool RightRun;
+
+        // /// <summary>
+        // ///空跑
+        // /// </summary>
+
+        // public bool  Empty_run=false;
+        // /// <summary>
+        // ///急停top
+        // /// </summary>
+
+        // public bool EStop;
+        // /// <summary>
+        // ///停止
+        // /// </summary>
+        // public bool IsStop;
+        // /// <summary>
+        // ///工位有无料标志位
+        // /// </summary>
+        public bool StationMaterial;//工位
+
+        // /// <summary>
+        // //焊接波形数据
+        // /// </summary>
+        // public List<float> WeldDate=new List<float> ();//工位
+
+        // /// <summary>
+        // //设备最大功率
+        // /// </summary>
+        // public int WeldPower;//工位
+        // /// <summary>
+        // //机台选择  通用与6KW
+        // /// </summary>
+        // public int WeldOther;//工位
+        // /// <summary>
+        // //Sn
+        // /// </summary>
+        // public string  DataReceivedstrSN;//工位
+        ///// <summary>
+        // //登录用户名
+        // /// </summary>
+        // public string MesUserCode;//工位有
+        // /// <summary>
+        // //登录密码
+        // /// </summary>
+        // public string MesPassWord;//工位
+        // /// <summary>
+        // //设备编号
+        // /// </summary>
+        // public string MesdeviceCode;//工位
+        // /// <summary>
+        // //离焦量
+        // /// </summary>
+        // /// 
+
+        // public double From_Focus;//离焦量
+
+
+        // /// <summary>
+        // //焊接半径
+        // /// </summary>
+        // /// 
+
+        // public double Weld_R;//焊接半径
+
+        // /// <summary>
+        // //焊接波形号
+        // /// </summary>
+        // /// 
+
+        // public int  Weld_Num;//焊接波形号
+        // /// <summary>
+        // //焊接速度
+        // /// </summary>
+        // /// 
+        // public int  Weld_Speed;//焊接速度
+        //                        /// <summary>
+        // //测高X
+        // /// </summary>
+        // /// 
+        // public double HeightP_X;//测高X
+
+
+        // /// <summary>
+        // //测高Y
+        // /// </summary>
+        // /// 
+        // public double HeightP_Y;//测高Y
+
+        // /// <summary>
+        // //测高偏距X
+        // /// </summary>
+        // /// 
+        // public double HeightOffset_X;//测高偏距X
+
+
+        // /// <summary>
+        // //测高偏距Y
+        // /// </summary>
+        // /// 
+        // public double HeightOffset_Y;//测高偏距Y
+        // /// <summary>
+        // /// 手动过MES参数文件名
+        // /// </summary>
+        // public string MesName;
+
+        // /// <summary>
+        // //门屏蔽
+        // /// </summary>
+        // /// 
+        // public bool  Door_Enable;//门屏蔽
+        /// <summary>
+        /// 上料轴待机位
+        /// </summary>
+        public double 上料轴待机位;
+        /// <summary>
+        /// 上料轴放纸位
+        /// </summary>
+        public double 上料轴放纸位;
+        /// <summary>
+        /// 上料轴取料位
+        /// </summary>
+        public double 上料轴取料位;
+        public double 上料轴放料位;
+        public double 上料轴中转位;
+        public double CCD_左载台_待机位;
+        public double CCD_左载台_取料位位;
+        public double CCD_左载台_线扫完成位;
+        public double CCD_左载台激光清洗位;
+        public double CCD_左载台激光喷码位;
+        public double CCD_左载台下料位;
+        public double CCD_左到喷码位;
+     
+
+
+
+        public double CCD_右载台_待机位;
+        public double CCD_右载台_线扫完成位;
+        public double CCD_右到喷码位;
+        public double CCD_右载台_取料位位;
+        public double CCD_右载台激光清洗位;
+        public double CCD_右载台激光喷码位;
+        public double CCD_右载台下料位;
+
+
+        public double CCD_A_面_待机位;
+        public double CCD_A_面_放料位;
+        public double CCD_A_面_CCD位;
+         public double CCD_A_面开始拍位;
+        public double CCD_A_面结束拍位;
+        public double CCD_B_面待机位;
+
+        public double CCD_B_面放料位;
+        public double CCD_B_面下料位;
+        public double CCD_B_面开始拍位;
+        public double CCD_B_面结束拍位;
+        public double 下料中转待机位;
+        public double 下料中转放料位;
+        public double 下料中转下料位;
+        public double 下料X轴待机位;
+        public double 下料X轴取料位;
+        public double 下料X轴放纸位;
+        public double 下料X轴放料位;
+
+        public double 下料X轴1;
+        public double 下料X轴2;
+        public double 下料X轴3;
+        public double 下料X轴4;
+        public double 下料X轴5;
+        public double 下料X轴6;
+        
+        public double 下料X轴间隔;
+        public double 下料Z轴下料位;
+        public double 下料Z轴侧高位;
+        public double 下料Z轴取料位;
+        
+        public double 下料Z1轴取料位;
+        public double 下料Z2轴取料位;
+        public double 下料Z1轴1;
+        public double 下料Z1轴2;
+        public double 下料Z1轴3;
+        public double 下料Z2轴1;
+        public double 下料Z2轴2;
+        public double 下料Z2轴3;
+        public double eeee;
+
+
+        public double 激光拍照位;
+        public double 激光间隔;
+        public double 喷码拍照位;
+        public double 喷码间隔;
+        public double 下料轴取料位;
+        public double 下料轴B面放料位;
+        public double 下料轴B面NG位;
+        public double 翻放位;
+        public double 下料轴放料OK位;
+        public double 下料轴放料NG位;
+        public double 下料轴放料位;
+        public double 下料轴待机位;
+
+        public double 分堆底部接料轴待机位;
+        public double 分堆底部接料轴取料位;
+        public double 分堆底部接料轴放料位;
+
+        public double 分堆X轴待机位;
+        public double 分堆Y轴待机位;
+        public double 分堆Y轴放料位;
+        public double 分堆Z轴待机位;
+
+        public double 分堆X轴取料位;
+        public double 分堆Y轴取料位;
+        public double 分堆Z轴取料位;
+        public double 测高位;
+        public double 测高位X;
+        //标定数据
+
+        public double 左平激1;
+        public double 左平激2;
+        public double 左平激3;
+        public double 左平激4;
+        public double 左平激5;
+        public double 左平激6;
+        public double 左平激7;
+        public double 左平激8;
+        public double 左平激9;
+        public double 左平激标定拍照点;
+        public double 激与左轴1;
+        public double 激与左轴2;
+        public double 激与左轴3;
+        public double 激与左轴4;
+        public double 激与左轴5;
+        public double 激与左轴6;
+        public double 激与左轴7;
+        public double 激与左轴8;
+        public double 激与左轴9;
+        public double 激与左轴拍照点;
+        public double 左平喷1;
+        public double 左平喷2;
+        public double 左平喷3;
+        public double 左平喷4;
+        public double 左平喷5;
+        public double 左平喷6;
+        public double 左平喷7;
+        public double 左平喷8;
+        public double 左平喷9;
+        public double 左平喷定拍照点;
+        public double 喷左平1;
+        public double 喷左平2;
+        public double 喷左平3;
+        public double 喷左平4;
+        public double 喷左平5;
+        public double 喷左平6;
+        public double 喷左平7;
+        public double 喷左平8;
+        public double 喷左平9;
+        public double 喷左平拍照点;
+        public double 右平激1;
+        public double 右平激2;
+        public double 右平激3;
+        public double 右平激4;
+        public double 右平激5;
+        public double 右平激6;
+        public double 右平激7;
+        public double 右平激8;
+        public double 右平激9;
+        public double 右平激标定拍照点;
+        public double 激与右轴1;
+        public double 激与右轴2;
+        public double 激与右轴3;
+        public double 激与右轴4;
+        public double 激与右轴5;
+        public double 激与右轴6;
+        public double 激与右轴7;
+        public double 激与右轴8;
+        public double 激与右轴9;
+        public double 激与右轴拍照点;
+
+        public double 右平喷1;
+
+        public double 右平喷2;
+        public double 右平喷3;
+        public double 右平喷4;
+        public double 右平喷5;
+        public double 右平喷6;
+        public double 右平喷7;
+        public double 右平喷8;
+        public double 右平喷9;
+        public double 右平喷定拍照点;
+        public double 喷右平1;
+        public double 喷右平2;
+        public double 喷右平3;
+        public double 喷右平4;
+        public double 喷右平5;
+        public double 喷右平6;
+        public double 喷右平7;
+        public double 喷右平8;
+        public double 喷右平9;
+        public double 喷右平拍照点;
+
+        public double 左平激1线扫;
+        public double 左平激2线扫;
+        public double 左平激3线扫;
+        public double 左平激4线扫;
+        public double 左平激5线扫;
+        public double 左平激6线扫;
+        public double 左平激7线扫;
+        public double 左平激8线扫;
+        public double 左平激9线扫;
+        public double 激与左轴1线扫;
+        public double 激与左轴2线扫;
+        public double 激与左轴3线扫;
+        public double 激与左轴4线扫;
+        public double 激与左轴5线扫;
+        public double 激与左轴6线扫;
+        public double 激与左轴7线扫;
+        public double 激与左轴8线扫;
+        public double 激与左轴9线扫;
+
+        public double 右平激1线扫;
+        public double 右平激2线扫;
+        public double 右平激3线扫;
+        public double 右平激4线扫;
+        public double 右平激5线扫;
+        public double 右平激6线扫;
+        public double 右平激7线扫;
+        public double 右平激8线扫;
+        public double 右平激9线扫;
+
+        public double 激与右轴1线扫;
+        public double 激与右轴2线扫;
+        public double 激与右轴3线扫;
+        public double 激与右轴4线扫;
+        public double 激与右轴5线扫;
+        public double 激与右轴6线扫;
+        public double 激与右轴7线扫;
+        public double 激与右轴8线扫;
+        public double 激与右轴9线扫;
+
+
+
+
+        public double 左平台相机与激光中心间距X;
+        public double 左平台相机与激光中心间距Y;
+        public double 右平台相机与激光中心间距X;
+        public double 右平台相机与激光中心间距Y;
+
+        public double 左平台相机与喷码中心间距X;
+        public double 左平台相机与喷码中心间距Y;
+        public double 右平台相机与喷码中心间距X;
+        public double 右平台相机与喷码中心间距Y;
+
+        public double 左激光位置到喷码位置矩阵A;
+        public double 左激光位置到喷码位置矩阵B;
+        public double 左激光位置到喷码位置矩阵C;
+        public double 左激光位置到喷码位置矩阵D;
+        public double 左激光位置到喷码位置矩阵TX;
+        public double 左激光位置到喷码位置矩阵TY;
+
+        public double 右激光位置到喷码位置矩阵A;
+        public double 右激光位置到喷码位置矩阵B;
+        public double 右激光位置到喷码位置矩阵C;
+        public double 右激光位置到喷码位置矩阵D;
+        public double 右激光位置到喷码位置矩阵TX;
+        public double 右激光位置到喷码位置矩阵TY;
+
+
+
+        public double 喷码U轴喷码位;
+        public double 喷码X偏移;
+        public double 喷码Y偏移;
+
+        public double 喷码距离;
+        public double 喷码起始点;
+        public double 喷码速度;
+        public int 延时;
+        public ProductionData(int value)
+        {
+            Date_Clear(value);
+        }
+        public void Date_Clear(int value)
+        {
+         //   OK_date = value;
+         //   NG_date = value;
+         //   TheCurrentpoint = value;
+         //   TheCurrentProduction = value;
+         //   CT_TIME = value;
+         //   SN = "";
+         //   CTtime = "0.00";
+         ////   Clear_TIME = value;
+         //   Current_TIME = value; 
+        }
+        public void cleardate(int value)
+        {
+            //OK_date = value;
+            //NG_date = value;
+            //TheCurrentpoint = value;
+            //TheCurrentProduction = value;
+            //TheWeldingPower = value;
+            //TheWeldingSpeed = value;
+            //SN = "";
+        }
+    
+        //public string[] ReadXml(string filename, string[] strArrayData)//string[] strArrayRow)
+        //{
+        //    try
+        //    {
+        //        //<1>实例化一个XML文档操作对象.
+        //        XmlDocument doc = new XmlDocument();
+        //        //<2>使用XML对象加载XML.
+        //        doc.Load(filename);
+        //        //<3>获取根节点.
+        //        XmlNode root = doc.SelectSingleNode("Production");
+        //        //<4>获取根节点下所有子节点.
+        //        XmlNodeList nodeList = root.ChildNodes;
+
+        //        //<5>遍历输出.
+        //        foreach (XmlNode node in nodeList)
+        //        {
+        //            for (int i = 0; i < node.ChildNodes.Count; i++)
+        //            {
+        //                strArrayData[i] = node.ChildNodes[i].InnerText;
+        //            }
+        //        }
+        //        return strArrayData;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        return null;
+        //        //throw;
+        //    }
+        //}
+        //public void WriteXml(string[] strArrayColumn, string[] strArrayRow, string path)
+        //{
+        //    //创建一个数据集，将其写入xml文件
+        //    //path = "ParameterData.xml";
+        //    System.Data.DataSet ds = new System.Data.DataSet("Production");
+        //    System.Data.DataTable table = new System.Data.DataTable("ProductionData");
+        //    ds.Tables.Add(table);
+        //    foreach (var item in strArrayColumn)
+        //    {
+        //        table.Columns.Add(item, typeof(string));
+        //    }
+
+        //    System.Data.DataRow row = table.NewRow();
+        //    for (int i = 0; i < strArrayRow.Length; i++)
+        //    {
+        //        row[i] = strArrayRow[i];
+        //    }
+        //    ds.Tables["ProductionData"].Rows.Add(row);
+        //    ds.WriteXml(path);
+        //}
+    }
+
+    [XmlInclude(typeof(ProductionData))]
+    public partial class DateSave
+    {
+        public ProductionData Production = ProductionData.Instance();
+        public List<ProductionData> m_ProductionData;
+        [XmlIgnore]
+        public static Dictionary<string, ProductionData> m_ProductionDataDictionary = new Dictionary<string, ProductionData>();
+        public  static DateSave DateSav;
+        public static DateSave Instance()
+        {
+            if (DateSav == null)
+            {
+                DateSav = new DateSave();
+            }
+            return DateSav;
+        }
+        //public List<OutputData> m_OutputDataList;
+        //[XmlIgnore]
+        //public static Dictionary<string, OutputData> m_OutputDictionary = new Dictionary<string, OutputData>();
+
+        public bool SaveDoc()
+        {
+            if (!Directory.Exists(@".//Parameter/"))
+            {
+                Directory.CreateDirectory(@".//Parameter/");
+            }
+            FileStream fsWriter = new FileStream(@".//Parameter/ProductionData" + ".xml", FileMode.Create, FileAccess.Write, FileShare.Read);
+            // XmlSerializer xmlSerializer = new XmlSerializer(typeof(DateSave));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(DateSave));
+            xmlSerializer.Serialize(fsWriter, this);
+            fsWriter.Close();
+
+            return true;
+        }
+        public bool SaveDoc_Other(string path)
+        {
+            if (!Directory.Exists(@".//FlowDocument/"))
+            {
+                Directory.CreateDirectory(@".//FlowDocument/");
+            }
+            FileStream fsWriter = new FileStream(@".//FlowDocument//" + path + "/ProductionData" + ".xml", FileMode.Create, FileAccess.Write, FileShare.Read);
+            // XmlSerializer xmlSerializer = new XmlSerializer(typeof(DateSave));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(DateSave));
+            xmlSerializer.Serialize(fsWriter, this);
+            fsWriter.Close();
+
+            return true;
+        }
+        public  DateSave LoadObj()
+        {
+            DateSave pDoc;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(DateSave));
+            FileStream fsReader = null;
+            try
+            {
+                fsReader = File.OpenRead(@".//Parameter/ProductionData" + ".xml");
+                pDoc = (DateSave)xmlSerializer.Deserialize(fsReader);
+                fsReader.Close();
+            }
+            catch (Exception eMy)
+            {
+                if (fsReader != null)
+                {
+                    fsReader.Close();
+                }
+               
+                pDoc = new DateSave();
+              
+               
+            }
+            return pDoc;
+        }
+        public DateSave()
+        {
+
+            m_ProductionData = new List<ProductionData>();
+          //  m_ProductionDataDictionary = new Dictionary<string, ProductionData>();
+            //m_OutputDataList = new List<OutputData>();
+            //m_OutputDictionary = new Dictionary<string, OutputData>();
+        }
+    }
+
+}

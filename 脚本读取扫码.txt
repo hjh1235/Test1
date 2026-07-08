@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.IO.Ports;
+using System.Threading;
+namespace MyApplication
+{
+    public class TestClass
+    {    
+
+        static void Main(string args)
+        {
+            int  received_count=0;
+          string DataReceivedstr = "";
+         string DataReceivedstr_STR = "";
+        string Received_Date= "";
+            try         
+            { 
+                    System.IO.Ports.SerialPort COMM = new System.IO.Ports.SerialPort(); 
+                
+                    COMM.PortName = "com1";               
+                    COMM.BaudRate =9600; 
+                       
+                     COMM.StopBits = StopBits.One;
+                        COMM.DataBits = 8; 
+                        COMM.Parity = Parity.Odd;
+               
+                     if (COMM.IsOpen==false )
+                    {   
+                        COMM.Open();            
+                    }
+                
+                   if (COMM.IsOpen == true)
+                    {
+                    COMM.ReadTimeout =1000;
+                    COMM.ReadExisting();
+                    COMM.Write("T" + "\r\n");
+                    Thread.Sleep(4000);
+                
+                     if (COMM.IsOpen && COMM.BytesToRead > 0)
+                    {
+                        int n = COMM.BytesToRead;
+                        byte[] buf = new byte[n]; 
+                        received_count += n;                      
+                        COMM.Read(buf, 0, n);                          
+                        for (int i = 0; i < buf.Length; i++)
+                        {
+                            DataReceivedstr_STR = System.Text.Encoding.Default.GetString(buf);
+                            Received_Date = System.Text.Encoding.Default.GetString(buf);
+                        }
+                    }
+                    }
+                     COMM.Close();
+                }          
+                catch 
+                { 
+                }
+                   Console.WriteLine(Received_Date);
+        }
+    }
+}

@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.IO.Ports;
+using System.Threading;
+namespace MyApplication
+{
+    public class TestClass
+    {    
+
+        static void Main(string[] args)
+        {
+            double data=0;
+             
+            byte[] buffer = new byte[6];
+          
+            byte[] m_SendByte = new byte[6];
+  
+            try         
+            { 
+                    System.IO.Ports.SerialPort COMM = new System.IO.Ports.SerialPort(); 
+                
+                    COMM.PortName = "com1";               
+                    COMM.BaudRate =9600; 
+                       
+                     COMM.StopBits = StopBits.One;
+                        COMM.DataBits = 8; 
+                        COMM.Parity = Parity.Odd;
+               
+                     if (COMM.IsOpen==false )
+                    {   
+                        COMM.Open();            
+                    }
+                
+                   if (COMM.IsOpen == true)
+                    {
+                    COMM.ReadTimeout = 100;
+                    COMM.ReadExisting();
+                    COMM.Write("2222");
+                    Thread.Sleep(200);
+
+                
+                    
+                    
+             COMM.Close();
+                 }
+                }          
+                catch 
+                { 
+                }
+
+                Console.WriteLine("2222");
+        }
+    }
+}
