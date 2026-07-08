@@ -36,7 +36,7 @@ namespace UniversalControlSystem
             switch (_DefintionFun2.FunName)
             {
                 case "左发送码":
-                    string qrCode = DataManage.StrValue("扫码","模组码"); ;
+                    string qrCode = DataManage.StrValue("扫码","模组码"); ;//1231231231213
                     sendQRCode._通讯名字 = "CCD右"; //用到
                                                //拍照校正，修改XY坐标后保存
                     sendQRCode.发送命令 = $"&SN:{qrCode}";
